@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nagi</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+
+  <script src="/nagi.js"></script>
+</head>
+
+<body>
+  <main>
+    <header class="container">
+      <h1>nagi</h1>
+    </header>
+    <div id="loader" class="container">
+      <div class="row">
+        <fieldset class="column">
+          <legend>nagi file</legend>
+          <label for="nagiLoader">File</label>
+          <input id="nagiLoader" type="file">
+          <br>
+          <button class="button" onclick="startNagi();">start</button>
+          <button class="button" onclick="stopNagi();">stop</button>
+        </fieldset>
+        <fieldset class="column">
+          <legend>nagi control</legend>
+          <label for="startPos">Start sec.</label>
+          <input id="startPos" value="0">
+          <label for="renderSpan">Render span frame</label>
+          <input id="renderSpan" value="1">
+          <label for="fftSize">FFT size</label>
+          <select id="fftSize">
+            <option value="1024" selected>1024</option>
+            <option value="2048">2048</option>
+            <option value="4096">4096</option>
+            <option value="8192">8192</option>
+          </select>
+        </fieldset>
+        <fieldset class="column">
+          <legend>nagi option</legend>
+          <div>
+            <input type="checkbox" id="shiftToLeft" checked>
+            <label for="shiftToLeft" class="label-inline">Shift to left</label>
+          </div>
+          <div>
+            <input type="checkbox" id="brighterToZero">
+            <label for="brighterToZero" class="label-inline">Brighter to 0</label>
+          </div>
+          <label for="colorCoeffScale">Color Scale</label>
+          <input id="colorCoeffScale" value=1>
+          <label for="colorCoeffOffset">Color Offset</label>
+          <input id="colorCoeffOffset" value=0>
+        </fieldset>
+      </div>
+    </div>
+    <div id="drawer" class="container">
+      <canvas id="nagiDrawer" height="360" width="1080"></canvas>
+    </div>
+  </main>
+</body>
+
+</html>
